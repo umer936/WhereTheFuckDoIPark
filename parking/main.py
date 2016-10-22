@@ -15,10 +15,15 @@
 # limitations under the License.
 #
 import webapp2
+import jinja2
+import os
+
+env = jinja2.Environment(loader=jinja2.FileSystemLoader('templates'))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        main_template = env.get_template('index.html')
+        self.response.out.write(main_template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

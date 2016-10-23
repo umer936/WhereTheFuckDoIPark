@@ -119,7 +119,8 @@ for curr_parking_lot_row in parking_rows:
             plt.scatter(curr_col,1,c='g')
 
             plt.figure(4)   #parking lot image
-            plt.scatter(curr_col,curr_parking_lot_row.top_left[1] + 7, c='g')
+            area = np.pi * (11)**2
+            plt.scatter(curr_col + 2,curr_parking_lot_row.top_left[1] + 7, s=area, marker='s', c='g')
 
             #to prevent doubel counting cars, just reset the counter
             num_consec_pixels_over_thresh = 0

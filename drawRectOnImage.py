@@ -1,0 +1,8 @@
+parking = Image('/home/umer936/Pictures/cars.png')
+facelayer = DrawingLayer((parking.width, parking.height))
+facebox_dim = (200,200)
+center_point = (parking.width / 2, parking.height / 2)
+facebox = facelayer.centeredRectangle(center_point, facebox_dim)
+parking.addDrawingLayer(facelayer)
+parking.applyLayers()
+parking.show()

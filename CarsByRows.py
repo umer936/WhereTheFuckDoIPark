@@ -130,10 +130,10 @@ for curr_parking_lot_row in parking_rows:
     plt.xlim([0,n])
 
     #print out some stats
-    print('found {0} cars and {1} empty space(s) in row {2}'.format(
+    print('found {0} cars and {1} empty space(s) in row {2} [ {3:>3} % capacity ]'.format(
         curr_parking_lot_row.total_spaces - curr_parking_lot_row.empty_spaces,
         curr_parking_lot_row.empty_spaces,
-        curr_idx +1))
+        curr_idx +1, ((curr_parking_lot_row.total_spaces - curr_parking_lot_row.empty_spaces) *100 / curr_parking_lot_row.total_spaces)))
 
     curr_idx += 1
 
